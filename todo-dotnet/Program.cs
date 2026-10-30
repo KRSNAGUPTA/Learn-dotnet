@@ -62,7 +62,7 @@ app.MapPost("/api/todos", async (CreateTodoInput req, AppDbContext db) =>
 
     }catch(Exception e)
     {
-        return Results.InternalServerError(new {error = "Internal Server Error", deatils=e.Message, inner= e.InnerException?.Message});
+        return Results.InternalServerError(new {error = "Internal Server Error", details=e.Message, inner= e.InnerException?.Message});
     }
 
 });
