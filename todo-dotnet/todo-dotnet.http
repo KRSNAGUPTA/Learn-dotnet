@@ -1,9 +1,28 @@
 @todo_dotnet_HostAddress = http://localhost:5222
 
-GET {{todo_dotnet_HostAddress}}/weatherforecast/
-Accept: application/json
+# GET {{todo_dotnet_HostAddress}}/weatherforecast/
+# Accept: application/json
 
 ###
 GET {{todo_dotnet_HostAddress}}/api/todos
+
+###
+POST {{todo_dotnet_HostAddress}}/api/todos
+Content-Type: application/json
+
+{
+  "title": "Test #4",
+  "description": "Test Description"
+}
+###
+
+DELETE {{todo_dotnet_HostAddress}}/api/todos/20
+###
+PATCH  {{todo_dotnet_HostAddress}}/api/todos/3
+Content-Type: application/json
+
+{
+    "description":"Test Desc Req"
+}
 
 ###
