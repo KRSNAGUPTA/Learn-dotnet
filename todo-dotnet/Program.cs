@@ -31,6 +31,18 @@ app.MapGet("/api/todos", async (AppDbContext db) =>
     };
 });
 
+
+app.MapGet("/api/todos/{id:int}", async (int id, AppDbContext db) =>
+{
+    var todo = await db.TodoItems.FindAsync(id);
+
+    if(todo is null)
+    {
+        return Results.NotFound(new {error=$"Not found todo with id {id}"});
+    }
+
+    return Results.Ok(new {message=$"Fetched todo with id {id}", data=todo});
+});
 app.MapPost("/api/todos", async (CreateTodoInput req, AppDbContext db) =>
 {
     if (string.IsNullOrWhiteSpace(req.title))

@@ -7,6 +7,8 @@
 GET {{todo_dotnet_HostAddress}}/api/todos
 
 ###
+GET {{todo_dotnet_HostAddress}}/api/todos/6
+###
 POST {{todo_dotnet_HostAddress}}/api/todos
 Content-Type: application/json
 
