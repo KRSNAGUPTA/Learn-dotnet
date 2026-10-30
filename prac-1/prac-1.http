@@ -1,0 +1,8 @@
+@prac_1_HostAddress = http://localhost:5231
+
+GET {{prac_1_HostAddress}}/weatherforecast/
+Accept: application/json
+###
+GET {{prac_1_HostAddress}}/hello-world/
+Accept: application/json
+###
